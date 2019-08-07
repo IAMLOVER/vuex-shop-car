@@ -8,6 +8,12 @@ export const getAllGoods = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       return resolve(goods)
-    }, 100);
+    }, 100)
   })
+}
+
+export const buyGoods = (products,cb,errCb) => {
+  setTimeout(() => {
+    Math.random() > 0.5 ? cb() : errCb()
+  }, 100)
 }

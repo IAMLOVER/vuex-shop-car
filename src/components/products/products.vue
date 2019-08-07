@@ -6,18 +6,23 @@
         <span>商品名：{{ item.title }}</span>
         <span>价钱：￥{{ item.price }}</span>
         <span>库存：{{ item.inventory }}个</span>
-        <button>加入购物车</button>
+        <button @click="add(item)">加入购物车</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions} from 'vuex'
 export default {
   computed: {
     ...mapState('products',{
       goods: 'allGoods'
+    })
+  },
+  methods: {
+    ...mapActions('shopCar',{
+      add: 'addGoodsToShopCar'
     })
   },
   created() {

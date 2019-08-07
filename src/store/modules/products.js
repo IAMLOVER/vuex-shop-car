@@ -6,6 +6,12 @@ const state = {
 const mutations = {
   setAllGoods (state,payload){
     state.allGoods = payload.allGoods
+  },
+  deleteGoodsInventory (state,payload){
+    const item = state.allGoods.find(item => item.id === payload.id)
+    if(item.inventory){
+      item.inventory--
+    }
   }
 }
 
