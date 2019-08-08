@@ -15,6 +15,8 @@ const mutations = {
   },
   incrementItemQuantity(state, payload) {
     const item = state.items.find(element => element.id === payload.id)
+
+
     item.quantity++
   },
   setPayStatus(state, payload) {
